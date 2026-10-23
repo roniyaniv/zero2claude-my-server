@@ -1,0 +1,1 @@
+Start the server by using the commands `npm run start` or `node app.js`
