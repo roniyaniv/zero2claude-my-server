@@ -1,0 +1,147 @@
+/* Colors live in variables so light and dark mode can swap them in one place */
+:root {
+  --bg: #f7f7f9;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+  --heading: #111827;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #171a23;
+  --border: #2a2f3a;
+  --heading: #f3f4f6;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #818cf8;
+  --accent-soft: #262a4a;
+  --on-accent: #0f1117;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Nav bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.nav-links a.active {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Light/dark toggle button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Page content */
+main {
+  max-width: 720px;
+  margin: 64px auto;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--heading);
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+main a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Phones: stack the logo above the links */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My First Server</title>
-  <style>
-    body { font-family: sans-serif; max-width: 600px; margin: 50px auto; }
-    h1 { color: #333; }
-  </style>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/theme.js"></script>
 </head>
 <body>
-  <h1>Welcome to My Server</h1>
-  <p>This page is being served by Node.js and Express.</p>
-  <p>I built this myself.</p>
+  <nav class="navbar">
+    <a href="/" class="logo">My Server</a>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><button id="theme-toggle" class="theme-toggle" type="button"></button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to My Server</h1>
+    <p>This page is being served by Node.js and Express.</p>
+    <p>I built this myself.</p>
+  </main>
 </body>
 </html>

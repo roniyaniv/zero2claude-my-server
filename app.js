@@ -14,7 +14,7 @@ app.use('/about', express.static('public/about.html'));
 // });
  
 app.get('/contact', (req, res) => {
-  res.send('Contact me at: hello@mysite.com');
+  res.sendFile(__dirname + '/public/contact.html');
 });
 
 app.get('/api/time', (req, res) => {
