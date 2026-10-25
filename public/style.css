@@ -37,12 +37,17 @@ body {
   color: var(--text);
   line-height: 1.6;
   transition: background 0.2s, color 0.2s;
+  /* Lay the page out as a column so the footer sits at the bottom even on short pages */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Nav bar */
 .navbar {
   position: sticky;
   top: 0;
+  z-index: 10; /* keep the nav bar above page content as it scrolls underneath */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -110,6 +115,8 @@ body {
 
 /* Page content */
 main {
+  flex: 1;
+  width: 100%;
   max-width: 720px;
   margin: 64px auto;
   padding: 0 24px;
@@ -129,6 +136,25 @@ p {
 }
 
 main a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  padding: 24px 32px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.footer p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.footer a {
   color: var(--accent);
   font-weight: 500;
 }
